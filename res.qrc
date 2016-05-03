@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/Background">
+        <file>res/mainBackground.jpg</file>
+        <file>res/gameplaybackground.png</file>
+    </qresource>
+    <qresource prefix="/animation">
+        <file>res/taikoSelect.gif</file>
+        <file>res/test.gif</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file>res/switch.wav</file>
+        <file>res/decide.wav</file>
+        <file>res/move.wav</file>
+    </qresource>
+</RCC>
