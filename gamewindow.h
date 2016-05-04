@@ -15,13 +15,13 @@ class GameWindow : public QMainWindow
 public:
     explicit GameWindow(QWidget *parent = 0);
     ~GameWindow();
-        QMovie* background;
 
 signals:
     void finished();
 
 private:
     Ui::GameWindow *ui;
+    QMovie* background;
 
 };
 

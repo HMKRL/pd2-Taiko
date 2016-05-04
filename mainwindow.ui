@@ -35,7 +35,7 @@
    <string>TaikoMaster</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">MainWindow{background-image: url(:/Background/res/gameplaybackground.png);};</string>
+   <string notr="true">MainWindow{background-image: url(:/Background/res/mainBackground.jpg);};</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="focusPolicy">

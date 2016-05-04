@@ -103,5 +103,7 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
 {
-    if(event->button() == Qt::LeftButton) selected();
+    if(event->x() <= 1050 && event->x() >= 720 && event->y() >= 290 && event->y() <= 585) {
+        if(event->button() == Qt::LeftButton) selected();
+    }
 }
