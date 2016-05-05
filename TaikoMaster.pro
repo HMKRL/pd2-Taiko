@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     gamewindow.cpp \
-    basicrequire.cpp
+    basicrequire.cpp \
+    note.cpp
 
 HEADERS  += mainwindow.h \
     gamewindow.h \
-    basicrequire.h
+    basicrequire.h \
+    note.h
 
 FORMS    += mainwindow.ui \
     gamewindow.ui \

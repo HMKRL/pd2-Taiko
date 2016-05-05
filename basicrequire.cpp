@@ -1,5 +1,6 @@
 #include "basicrequire.h"
 #include "ui_basicrequire.h"
+#include <QDebug>
 
 BasicRequire::BasicRequire(QWidget *parent) :
     QMainWindow(parent),
@@ -10,13 +11,14 @@ BasicRequire::BasicRequire(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(moveTimer, SIGNAL(timeout()), this, SLOT(timeElapsed()));
-    moveTimer->start(FPS);
 }
 
 BasicRequire::~BasicRequire()
 {
     delete ui;
     delete moveTimer;
+    delete scene;
+    delete view;
 }
 
 void BasicRequire::timeElapsed()
@@ -24,8 +26,45 @@ void BasicRequire::timeElapsed()
     time_elapsed += FPS;
     if(time_elapsed <= 30000) {
         ui->lcdNumber->display(30 - time_elapsed / 1000);
+        if(!map.isEmpty()) {
+            if(time_elapsed == map.front()->getStartTime()) {
+                scene->addItem(map.front());
+                connect(moveTimer, SIGNAL(timeout()), map.front(), SLOT(move()));
+                map.pop_front();
+            }
+        }
     }
     else {
         moveTimer->stop();
+    }
+}
+
+void BasicRequire::gameStart()
+{
+    this->show();
+    scene = new QGraphicsScene(0, 0, 1280, 720);
+    view = new QGraphicsView(ui->widget);
+    view->setScene(scene);
+    view->show();
+    addNote();
+    moveTimer->start(FPS);
+}
+
+void BasicRequire::addNote()
+{
+    /*N = new Note;
+    N->setPixmap(QPixmap(":/notes/res/small_blue.png"));
+    N->setPos(1280, 218);
+    */
+    //N->setPos(373, 218);
+    for(int i = 0;i < 15;++i) {
+        N = new Note(1, 1000 * i);
+        map.push_back(N);
+    }
+}
+
+void BasicRequire::keyPressEvent(QKeyEvent *event)
+{
+    if(event->key() == Qt::Key_J) {
     }
 }

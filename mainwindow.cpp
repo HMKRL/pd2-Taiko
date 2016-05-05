@@ -9,8 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
     currentSelect(new QMovie),
     indexMove(new QSound(":/sounds/res/move.wav")),
     selectedSound(new QSound(":/sounds/res/decide.wav")),
-    gameWindow(new GameWindow),
-    basicWindow(new BasicRequire),
     selectIndex(0)
 {
     ui->setupUi(this);
@@ -30,8 +28,6 @@ MainWindow::~MainWindow()
     delete currentSelect;
     delete indexMove;
     delete selectedSound;
-    delete gameWindow;
-    delete basicWindow;
 }
 
 void MainWindow::moveSelection()
@@ -45,14 +41,16 @@ void MainWindow::selected()
     emit playSelectSound();
     switch(selectIndex) {
     case 0:
+        basicWindow = new BasicRequire;
         basicWindow->setGeometry(this->x(), this->y(), 1280, 720);
-        basicWindow->show();
+        basicWindow->gameStart();
         this->close();
         break;
     case 1:
+        gameWindow = new GameWindow;
         gameWindow->setGeometry(this->x(), this->y(), 1280, 720);
         gameWindow->show();
-        gameWindow->background->start();
+        //gameWindow->background->start();
         this->hide();
         break;
     case 2:

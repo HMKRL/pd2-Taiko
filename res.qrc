@@ -12,4 +12,12 @@
         <file>res/decide.wav</file>
         <file>res/move.wav</file>
     </qresource>
+    <qresource prefix="/notes">
+        <file>res/Redhit.png</file>
+        <file>res/small_blue.png</file>
+        <file>res/test.gif</file>
+        <file>res/small_red.png</file>
+        <file>res/big_red.png</file>
+        <file>res/big_blue.png</file>
+    </qresource>
 </RCC>

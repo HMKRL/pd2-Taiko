@@ -10,7 +10,7 @@ GameWindow::GameWindow(QWidget *parent) :
     ui->setupUi(this);
     background->setFileName(":/animation/res/test.gif");
     ui->label->setMovie(background);
-    //background->start();
+    background->start();
 }
 
 GameWindow::~GameWindow()
