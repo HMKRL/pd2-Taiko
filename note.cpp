@@ -38,7 +38,7 @@ void Note::setNotePixmap()
         break;
     case 2:
         setPixmap(QPixmap(":/notes/res/big_red.png"));
-        setPos(1280, 180);
+        setPos(1280, 197);
         break;
     case 3:
         setPixmap(QPixmap(":/notes/res/big_blue.png"));
