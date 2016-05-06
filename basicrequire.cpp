@@ -99,11 +99,15 @@ void BasicRequire::getPoint(int accurate)
     int dis = abs(accurate - 351);
     if(dis < 20) {
         qDebug() << "T1";
+        score += 900 + 40 - dis;
     }
     else if(dis < 40) {
         qDebug() << "T2";
+        score += 300 + 40 - dis;
     }
     else {
         qDebug() << "T3";
+        score += 100 + 40 - dis;
     }
+    ui->lcdNumber_2->display(score);
 }
