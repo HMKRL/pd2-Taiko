@@ -26,6 +26,8 @@ public slots:
     void gameStart();
     void addNote();
     void keyPressEvent(QKeyEvent* event);
+    void noteDeleted();
+    void getPoint(int accurate);
 
 private:
     Ui::BasicRequire *ui;
@@ -36,6 +38,9 @@ private:
     QGraphicsView* view;
     Note* N;
     QVector<Note*> map;
+    int score;
+    QVector<Note*>::iterator It;
+    QVector<Note*>::iterator Cur;
 };
 
 #endif // BASICREQUIRE_H

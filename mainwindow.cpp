@@ -88,6 +88,7 @@ void MainWindow::keyPressEvent(QKeyEvent *k)
 
 void MainWindow::mouseMoveEvent(QMouseEvent *event)
 {
+    //qDebug() << event->x() << event->y();
     int temp = selectIndex;
     if(event->x() <= 1050 && event->x() >= 720) {
         if(event->y() <= 290) selectIndex = 0;

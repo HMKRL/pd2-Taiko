@@ -15,6 +15,10 @@ public slots:
     void setStartTime(int T);
     int getStartTime();
     void setNotePixmap();
+    int getType();
+
+signals:
+    void noteDestroyed();
 
 private:
     int startTime;
