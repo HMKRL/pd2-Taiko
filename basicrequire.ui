@@ -32,7 +32,7 @@
    <enum>Qt::StrongFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>BasicRequirement</string>
   </property>
   <property name="styleSheet">
    <string notr="true">BasicRequire{background-image: url(:/Background/res/gameplaybackground.png);};

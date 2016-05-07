@@ -43,6 +43,7 @@ void MainWindow::selected()
     case 0:
         basicWindow = new BasicRequire;
         basicWindow->setGeometry(this->x(), this->y(), 1280, 720);
+        basicWindow->show();
         basicWindow->gameStart();
         this->close();
         break;

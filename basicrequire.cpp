@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
+#include "basicresult.h"
 using namespace std;
 
 BasicRequire::BasicRequire(QWidget *parent) :
@@ -17,6 +18,9 @@ BasicRequire::BasicRequire(QWidget *parent) :
     ui->setupUi(this);
     connect(moveTimer, SIGNAL(timeout()), this, SLOT(timeElapsed()));
     srand(time(NULL));
+    scene = new QGraphicsScene(0, 0, 1280, 720);
+    view = new QGraphicsView(ui->widget);
+    view->setScene(scene);
 }
 
 BasicRequire::~BasicRequire()
@@ -42,25 +46,39 @@ void BasicRequire::timeElapsed()
         }
     }
     else {
+        basicResult* res = new basicResult;
         moveTimer->stop();
+        scene->clear();
+        res->showResult(score);
+        switch(res->exec()) {
+        case 0:
+            this->close();
+            break;
+        case 1:
+            time_elapsed = 0;
+            score = 0;
+            gameStart();
+            break;
+        default:
+            break;
+        }
     }
 }
 
 void BasicRequire::gameStart()
 {
-    this->show();
-    scene = new QGraphicsScene(0, 0, 1280, 720);
-    view = new QGraphicsView(ui->widget);
-    view->setScene(scene);
+    map.clear();
     addNote();
     view->show();
+    ui->lcdNumber->display(0);
+    ui->lcdNumber_2->display(0);
     moveTimer->start(FPS);
 }
 
 void BasicRequire::addNote()
 {
     //N->setPos(373, 218);
-    for(int i = 0;i < 30;++i) {
+    for(int i = 0;i < 60;++i) {
         N = new Note(rand() % 4 , 500 * i);
         map.push_back(N);
     }
@@ -98,15 +116,15 @@ void BasicRequire::getPoint(int accurate)
 {
     int dis = abs(accurate - 351);
     if(dis < 20) {
-        qDebug() << "T1";
+        //qDebug() << "T1";
         score += 900 + 40 - dis;
     }
     else if(dis < 40) {
-        qDebug() << "T2";
+        //qDebug() << "T2";
         score += 300 + 40 - dis;
     }
     else {
-        qDebug() << "T3";
+        //qDebug() << "T3";
         score += 100 + 40 - dis;
     }
     ui->lcdNumber_2->display(score);

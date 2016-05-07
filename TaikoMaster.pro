@@ -16,16 +16,19 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     gamewindow.cpp \
     basicrequire.cpp \
-    note.cpp
+    note.cpp \
+    basicresult.cpp
 
 HEADERS  += mainwindow.h \
     gamewindow.h \
     basicrequire.h \
-    note.h
+    note.h \
+    basicresult.h
 
 FORMS    += mainwindow.ui \
     gamewindow.ui \
-    basicrequire.ui
+    basicrequire.ui \
+    basicresult.ui
 
 RESOURCES += \
     res.qrc
