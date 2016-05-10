@@ -7,6 +7,7 @@
 #include <QDir>
 #include <QSettings>
 #include <QAbstractButton>
+#include "keyconf.h"
 
 namespace Ui {
 class optionsDialog;
@@ -28,14 +29,22 @@ private slots:
 
     void on_Speedslider_valueChanged(int value);
 
-
     void on_buttonBox_clicked(QAbstractButton *button);
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
 
 private:
     Ui::optionsDialog *ui;
     QString gameDir;
     QString settingsFilename;
     QSettings* settings;
+    keyConf* KeyConf;
 };
 
 #endif // OPTIONSDIALOG_H

@@ -1,9 +1,13 @@
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
 
+#include "note.h"
 #include <QMainWindow>
 #include <QMovie>
 #include <QDialog>
+#include <QGraphicsScene>
+#include <QTimer>
+#include <QtMultimedia/QMediaPlayer>
 
 namespace Ui {
 class GameWindow;
@@ -23,6 +27,18 @@ signals:
 private:
     Ui::GameWindow *ui;
     QMovie* background;
+    QGraphicsScene* scene;
+    Note* N;
+    QTimer* moveTimer;
+    QVector<Note*> map;
+    QVector<Note*>::iterator It;
+    QVector<Note*>::iterator Cur;
+    QMediaPlayer* Music;
+    QMediaPlayer* don;
+    QMediaPlayer* ka;
+    int time_elapsed;
+    int score;
+    int FPS;
 
 };
 

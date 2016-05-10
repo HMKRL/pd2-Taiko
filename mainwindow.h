@@ -10,6 +10,7 @@
 #include "gamewindow.h"
 #include "basicrequire.h"
 #include "optionsdialog.h"
+#include "mapselect.h"
 
 namespace Ui {
 class MainWindow;
@@ -45,6 +46,7 @@ private:
     BasicRequire* basicWindow;
     int selectIndex;
     optionsDialog* OptionsDialog;
+    mapSelect* MapSelect;
 };
 
 #endif // MAINWINDOW_H

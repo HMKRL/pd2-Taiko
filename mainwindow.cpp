@@ -48,10 +48,13 @@ void MainWindow::selected()
         this->close();
         break;
     case 1:
-        gameWindow = new GameWindow;
-        gameWindow->setGeometry(this->x(), this->y(), 1280, 720);
-        gameWindow->show();
+        MapSelect = new mapSelect;
+        MapSelect->show();
+        //gameWindow = new GameWindow;
+        //gameWindow->setGeometry(this->x(), this->y(), 1280, 720);
+        //gameWindow->show();
         this->hide();
+
         break;
     case 2:
         OptionsDialog = new optionsDialog;

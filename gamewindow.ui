@@ -32,14 +32,14 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">GameWindow{background-image: url(:/Background/res/gameplaybackground.png);};</string>
+   <string notr="true">MainWindow{background-image: url(:/Background/res/gameplaybackground.png);};</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>360</y>
+      <y>350</y>
       <width>1280</width>
       <height>368</height>
      </rect>
@@ -48,6 +48,27 @@
      <string>hatsune.gif</string>
     </property>
    </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1280</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/Background/res/gameplaybackground.png);</string>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+   </widget>
+   <zorder>graphicsView</zorder>
+   <zorder>label</zorder>
   </widget>
  </widget>
  <resources/>

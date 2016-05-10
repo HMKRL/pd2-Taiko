@@ -11,6 +11,7 @@ optionsDialog::optionsDialog(QWidget *parent) :
     ui->setupUi(this);
     settingsFilename = QDir::currentPath() + "/TaikoConfig.ini";
     settings = new QSettings(settingsFilename, QSettings::IniFormat);
+    KeyConf = new keyConf;
     loadSettings();
 }
 
@@ -18,6 +19,7 @@ optionsDialog::~optionsDialog()
 {
     delete ui;
     delete settings;
+    delete KeyConf;
 }
 
 void optionsDialog::loadSettings()
@@ -79,5 +81,34 @@ void optionsDialog::on_buttonBox_clicked(QAbstractButton *button)
 
         settings->setValue("GameDir", "/home");
         ui->lineEdit->setText("/home");
+
+        settings->setValue("leftka", Qt::Key_D);
+        settings->setValue("leftdon", Qt::Key_F);
+        settings->setValue("rightdon", Qt::Key_J);
+        settings->setValue("rightka", Qt::Key_K);
     }
+}
+
+void optionsDialog::on_pushButton_clicked()
+{
+    KeyConf->show();
+    settings->setValue("leftka", KeyConf->exec());
+}
+
+void optionsDialog::on_pushButton_2_clicked()
+{
+    KeyConf->show();
+    settings->setValue("leftdon", KeyConf->exec());
+}
+
+void optionsDialog::on_pushButton_3_clicked()
+{
+    KeyConf->show();
+    settings->setValue("rightdon", KeyConf->exec());
+}
+
+void optionsDialog::on_pushButton_4_clicked()
+{
+    KeyConf->show();
+    settings->setValue("rightka", KeyConf->exec());
 }
