@@ -8,6 +8,8 @@
 #include <QTimer>
 #include <QKeyEvent>
 #include <QVector>
+#include <QSound>
+#include <QtMultimedia/QMediaPlayer>
 
 namespace Ui {
 class BasicRequire;
@@ -28,6 +30,10 @@ public slots:
     void keyPressEvent(QKeyEvent* event);
     void noteDeleted();
     void getPoint(int accurate);
+    void hitEffect(int key);
+
+signals:
+    void playSoundEffect(int key);
 
 private:
     Ui::BasicRequire *ui;
@@ -41,6 +47,8 @@ private:
     int score;
     QVector<Note*>::iterator It;
     QVector<Note*>::iterator Cur;
+    QMediaPlayer* don;
+    QMediaPlayer* ka;
 };
 
 #endif // BASICREQUIRE_H

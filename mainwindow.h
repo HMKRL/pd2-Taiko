@@ -9,6 +9,7 @@
 #include <QSound>
 #include "gamewindow.h"
 #include "basicrequire.h"
+#include "optionsdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -43,6 +44,7 @@ private:
     GameWindow* gameWindow;
     BasicRequire* basicWindow;
     int selectIndex;
+    optionsDialog* OptionsDialog;
 };
 
 #endif // MAINWINDOW_H

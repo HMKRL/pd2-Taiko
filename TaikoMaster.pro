@@ -17,18 +17,21 @@ SOURCES += main.cpp\
     gamewindow.cpp \
     basicrequire.cpp \
     note.cpp \
-    basicresult.cpp
+    basicresult.cpp \
+    optionsdialog.cpp
 
 HEADERS  += mainwindow.h \
     gamewindow.h \
     basicrequire.h \
     note.h \
-    basicresult.h
+    basicresult.h \
+    optionsdialog.h
 
 FORMS    += mainwindow.ui \
     gamewindow.ui \
     basicrequire.ui \
-    basicresult.ui
+    basicresult.ui \
+    optionsdialog.ui
 
 RESOURCES += \
     res.qrc

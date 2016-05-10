@@ -7,8 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     currentSelect(new QMovie),
-    indexMove(new QSound(":/sounds/res/move.wav")),
-    selectedSound(new QSound(":/sounds/res/decide.wav")),
+    indexMove(new QSound(":/sounds/res/ka.wav")),
+    selectedSound(new QSound(":/sounds/res/don.wav")),
     selectIndex(0)
 {
     ui->setupUi(this);
@@ -51,11 +51,14 @@ void MainWindow::selected()
         gameWindow = new GameWindow;
         gameWindow->setGeometry(this->x(), this->y(), 1280, 720);
         gameWindow->show();
-        //gameWindow->background->start();
         this->hide();
         break;
     case 2:
-
+        OptionsDialog = new optionsDialog;
+        OptionsDialog->show();
+        this->setDisabled(true);
+        OptionsDialog->exec();
+        this->setDisabled(false);
         break;
     case 3:
         this->close();

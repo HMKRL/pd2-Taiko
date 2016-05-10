@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMovie>
+#include <QDialog>
 
 namespace Ui {
 class GameWindow;

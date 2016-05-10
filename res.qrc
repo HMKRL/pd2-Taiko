@@ -11,6 +11,8 @@
         <file>res/switch.wav</file>
         <file>res/decide.wav</file>
         <file>res/move.wav</file>
+        <file>res/ka.wav</file>
+        <file>res/don.wav</file>
     </qresource>
     <qresource prefix="/notes">
         <file>res/Redhit.png</file>
