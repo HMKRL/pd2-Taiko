@@ -33,23 +33,20 @@ void Note::setNotePixmap()
     switch(type) {
     case 0:
         setPixmap(QPixmap(":/notes/res/small_red.png"));
-        setPos(1280, 197);
         break;
     case 1:
         setPixmap(QPixmap(":/notes/res/small_blue.png"));
-        setPos(1280, 197);
         break;
     case 2:
         setPixmap(QPixmap(":/notes/res/big_red.png"));
-        setPos(1280, 197);
         break;
     case 3:
         setPixmap(QPixmap(":/notes/res/big_blue.png"));
-        setPos(1280, 197);
         break;
     default:
         break;
     }
+    setPos(1280, 197);
 }
 
 int Note::getType()

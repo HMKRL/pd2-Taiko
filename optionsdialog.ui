@@ -147,51 +147,78 @@
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>300</y>
-     <width>561</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>             左カツ                            左ドン                            右ドン                            右カツ</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>320</y>
+     <x>41</x>
+     <y>300</y>
      <width>561</width>
-     <height>27</height>
+     <height>56</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>左カツ</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>左ドン</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="label_11">
+      <property name="text">
+       <string>右ドン </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLabel" name="label_12">
+      <property name="text">
+       <string>右カツ</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
      <widget class="QPushButton" name="pushButton">
       <property name="text">
        <string>Change</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="1" column="1">
      <widget class="QPushButton" name="pushButton_2">
       <property name="text">
        <string>Change</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="1" column="2">
      <widget class="QPushButton" name="pushButton_3">
       <property name="text">
        <string>Change</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="1" column="3">
      <widget class="QPushButton" name="pushButton_4">
       <property name="text">
        <string>Change</string>

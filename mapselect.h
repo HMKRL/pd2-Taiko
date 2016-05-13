@@ -1,7 +1,10 @@
-#ifndef MAPSELECT_H
+﻿#ifndef MAPSELECT_H
 #define MAPSELECT_H
 
 #include <QDialog>
+#include <QAbstractButton>
+#include <QFile>
+#include <QSettings>
 
 namespace Ui {
 class mapSelect;
@@ -15,8 +18,12 @@ public:
     explicit mapSelect(QWidget *parent = 0);
     ~mapSelect();
 
+private slots:
+    void on_buttonBox_clicked(QAbstractButton *button);
+
 private:
     Ui::mapSelect *ui;
+    QSettings* settings;
 };
 
 #endif // MAPSELECT_H

@@ -8,6 +8,7 @@
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QtMultimedia/QMediaPlayer>
+#include <QPixmap>
 
 namespace Ui {
 class GameWindow;
@@ -39,6 +40,10 @@ private:
     int time_elapsed;
     int score;
     int FPS;
+    QPixmap Good;
+    QPixmap Ok;
+    QPixmap Bad;
+    QPixmap judge[3];
 
 };
 

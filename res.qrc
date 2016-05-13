@@ -22,4 +22,7 @@
         <file>res/big_red.png</file>
         <file>res/big_blue.png</file>
     </qresource>
+    <qresource prefix="/judge">
+        <file>res/judgement.png</file>
+    </qresource>
 </RCC>

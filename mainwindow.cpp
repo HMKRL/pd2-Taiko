@@ -19,7 +19,6 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(this, SIGNAL(playSelectSound()), selectedSound, SLOT(play()));
     setMouseTracking(true);
     centralWidget()->setMouseTracking(true);
-    //connect(gameWindow, SIGNAL(finished()), this, SLOT(onGameFinished()));
 }
 
 MainWindow::~MainWindow()
@@ -50,9 +49,10 @@ void MainWindow::selected()
     case 1:
         MapSelect = new mapSelect;
         MapSelect->show();
-        //gameWindow = new GameWindow;
-        //gameWindow->setGeometry(this->x(), this->y(), 1280, 720);
-        //gameWindow->show();
+        /*gameWindow = new GameWindow;
+        connect(gameWindow, SIGNAL(finished()), this, SLOT(onGameFinished()));
+        gameWindow->setGeometry(this->x(), this->y(), 1280, 720);
+        gameWindow->show();*/
         this->hide();
 
         break;

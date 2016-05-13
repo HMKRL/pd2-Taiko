@@ -12,7 +12,7 @@ BasicRequire::BasicRequire(QWidget *parent) :
     ui(new Ui::BasicRequire),
     moveTimer(new QTimer),
     time_elapsed(0),
-    FPS(2),
+    FPS(1),
     score(0),
     don(new QMediaPlayer),
     ka(new QMediaPlayer)

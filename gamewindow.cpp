@@ -19,6 +19,13 @@ GameWindow::GameWindow(QWidget *parent) :
     Music = new QMediaPlayer;
     don = new QMediaPlayer;
     ka = new QMediaPlayer;
+    Good = QPixmap(":/judge/res/judgement.png").copy(2, 5, 44, 25).scaled(101, 61, Qt::KeepAspectRatio);
+    Ok = QPixmap(":/judge/res/judgement.png").copy(3, 34, 44, 25).scaled(101, 61, Qt::KeepAspectRatio);
+    Bad = QPixmap(":/judge/res/judgement.png").copy(2, 65, 45, 25).scaled(101, 61, Qt::KeepAspectRatio);
+    judge[0] = Good;
+    judge[1] = Ok;
+    judge[2] = Bad;
+    ui->label_2->setPixmap(judge[2]);
 }
 
 GameWindow::~GameWindow()
