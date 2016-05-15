@@ -32,9 +32,14 @@ mapSelect::~mapSelect()
     delete ui;
 }
 
+QString mapSelect::getSelectedMap()
+{
+    return ui->listWidget->currentItem()->text();
+}
+
 void mapSelect::on_buttonBox_clicked(QAbstractButton *button)
 {
     if(ui->buttonBox->standardButton(button) == QDialogButtonBox::Ok) {
-        qDebug() << ui->listWidget->currentItem()->text();
+
     }
 }

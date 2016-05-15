@@ -48,12 +48,24 @@ void MainWindow::selected()
         break;
     case 1:
         MapSelect = new mapSelect;
-        MapSelect->show();
-        /*gameWindow = new GameWindow;
-        connect(gameWindow, SIGNAL(finished()), this, SLOT(onGameFinished()));
-        gameWindow->setGeometry(this->x(), this->y(), 1280, 720);
-        gameWindow->show();*/
         this->hide();
+        MapSelect->show();
+
+        if(MapSelect->exec()) {
+            QString M = MapSelect->getSelectedMap();
+            delete MapSelect;
+            gameWindow = new GameWindow;
+            connect(gameWindow, SIGNAL(finished()), this, SLOT(onGameFinished()));
+            gameWindow->setGeometry(this->x(), this->y(), 1280, 720);
+            gameWindow->setWindowTitle(M);
+            gameWindow->setBeatmap(M);
+            gameWindow->gameStart();
+        }
+
+        else {
+            this->show();
+            delete MapSelect;
+        }
 
         break;
     case 2:

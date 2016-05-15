@@ -9,6 +9,8 @@
 #include <QTimer>
 #include <QtMultimedia/QMediaPlayer>
 #include <QPixmap>
+#include <QKeyEvent>
+#include <QString>
 
 namespace Ui {
 class GameWindow;
@@ -21,6 +23,12 @@ class GameWindow : public QMainWindow
 public:
     explicit GameWindow(QWidget *parent = 0);
     ~GameWindow();
+    void gameStart();
+    void setBeatmap(QString name);
+
+public slots:
+    void keyPressEvent(QKeyEvent* event);
+    void timeElapsed();
 
 signals:
     void finished();
@@ -40,11 +48,8 @@ private:
     int time_elapsed;
     int score;
     int FPS;
-    QPixmap Good;
-    QPixmap Ok;
-    QPixmap Bad;
     QPixmap judge[3];
-
+    QString Beatmap;
 };
 
 #endif // GAMEWINDOW_H

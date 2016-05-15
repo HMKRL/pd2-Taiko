@@ -45,6 +45,7 @@ private:
     QString settingsFilename;
     QSettings* settings;
     keyConf* KeyConf;
+    int KEY_CHAR;
 };
 
 #endif // OPTIONSDIALOG_H

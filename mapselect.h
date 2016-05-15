@@ -5,6 +5,7 @@
 #include <QAbstractButton>
 #include <QFile>
 #include <QSettings>
+#include <QString>
 
 namespace Ui {
 class mapSelect;
@@ -17,6 +18,7 @@ class mapSelect : public QDialog
 public:
     explicit mapSelect(QWidget *parent = 0);
     ~mapSelect();
+    QString getSelectedMap();
 
 private slots:
     void on_buttonBox_clicked(QAbstractButton *button);

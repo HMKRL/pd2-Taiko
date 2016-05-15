@@ -24,6 +24,7 @@ optionsDialog::~optionsDialog()
 
 void optionsDialog::loadSettings()
 {
+    //default settings
     if(settings->value("Delay").toInt() == 0) {
         settings->setValue("Delay", 0);
     }
@@ -33,11 +34,34 @@ void optionsDialog::loadSettings()
     if(settings->value("GameDir").toString() == "") {
         settings->setValue("GameDir", "/home");
     }
+
+    //default key config
+    if(settings->value("leftdon").toInt() == 0) {
+        settings->setValue("leftdon", 'D');
+    }
+    if(settings->value("leftka").toInt() == 0) {
+        settings->setValue("leftka", 'F');
+    }
+    if(settings->value("rightdon").toInt() == 0) {
+        settings->setValue("rightdon", 'J');
+    }
+    if(settings->value("rightka").toInt() == 0) {
+        settings->setValue("rightka", 'K');
+    }
+
     ui->label_4->setText(settings->value("Delay").toString());
     ui->DelaySlider->setValue(settings->value("Delay").toInt());
 
     ui->label_5->setText(settings->value("Speed").toString().insert(1, '.'));
     ui->Speedslider->setValue(settings->value("Speed").toInt());
+
+    ui->pushButton->setText(QKeySequence(settings->value("leftka").toInt()).toString());
+
+    ui->pushButton_2->setText(QKeySequence(settings->value("leftdon").toInt()).toString());
+
+    ui->pushButton_3->setText(QKeySequence(settings->value("rightdon").toInt()).toString());
+
+    ui->pushButton_4->setText(QKeySequence(settings->value("rightka").toInt()).toString());
 
     ui->lineEdit->setText(settings->value("GameDir").toString());
 }
@@ -82,33 +106,48 @@ void optionsDialog::on_buttonBox_clicked(QAbstractButton *button)
         settings->setValue("GameDir", "/home");
         ui->lineEdit->setText("/home");
 
-        settings->setValue("leftka", Qt::Key_D);
-        settings->setValue("leftdon", Qt::Key_F);
-        settings->setValue("rightdon", Qt::Key_J);
-        settings->setValue("rightka", Qt::Key_K);
+        settings->setValue("leftka", 'D');
+        ui->pushButton->setText(QString('D'));
+
+        settings->setValue("leftdon", 'F');
+        ui->pushButton_2->setText(QString('F'));
+
+        settings->setValue("rightdon", 'J');
+        ui->pushButton_3->setText(QString('J'));
+
+        settings->setValue("rightka", 'K');
+        ui->pushButton_4->setText(QString('K'));
     }
 }
 
 void optionsDialog::on_pushButton_clicked()
 {
     KeyConf->show();
-    settings->setValue("leftka", KeyConf->exec());
+    KEY_CHAR = KeyConf->exec();
+    settings->setValue("leftka", KEY_CHAR);
+    ui->pushButton->setText(QKeySequence(KEY_CHAR).toString());
 }
 
 void optionsDialog::on_pushButton_2_clicked()
 {
     KeyConf->show();
-    settings->setValue("leftdon", KeyConf->exec());
+    KEY_CHAR = KeyConf->exec();
+    settings->setValue("leftdon", KEY_CHAR);
+    ui->pushButton_2->setText(QKeySequence(KEY_CHAR).toString());
 }
 
 void optionsDialog::on_pushButton_3_clicked()
 {
     KeyConf->show();
-    settings->setValue("rightdon", KeyConf->exec());
+    KEY_CHAR = KeyConf->exec();
+    settings->setValue("rightdon", KEY_CHAR);
+    ui->pushButton_3->setText(QKeySequence(KEY_CHAR).toString());
 }
 
 void optionsDialog::on_pushButton_4_clicked()
 {
     KeyConf->show();
-    settings->setValue("rightka", KeyConf->exec());
+    KEY_CHAR = KeyConf->exec();
+    settings->setValue("rightka", KEY_CHAR);
+    ui->pushButton_4->setText(QKeySequence(KEY_CHAR).toString());
 }
